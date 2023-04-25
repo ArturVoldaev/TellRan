@@ -1,0 +1,10 @@
+   0 nano myfirstbashscript.sh
+   1 chmod 744 myfirstbashscript.sh 
+   2 export USER=Artur
+  // Script code
+  date
+  echo 'Hello' $USER
+  find $PWD -name myfirstbashscript.sh -print -quit
+  //
+   3 ./myfirstbashscript.sh
+   4 history > history.txt
