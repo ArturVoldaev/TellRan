@@ -1,0 +1,52 @@
+ 1016  mkdir artur
+ 1017  cd artur/
+ 1018  nano taskARTUR.sh
+ 1019  chmod 744 taskARTUR.sh
+ 1020  ls
+ 1021  crontab -e
+ 1022  cd ..
+ 1023  mv artur /opt/060323_e/Rychard/taskRychard.sh // не перезатер его папку
+ 1024  mv artur /opt/060323_e/Artur
+ 1025  cd /opt/060323_e/
+ 1026  ls
+ 1027  cd Artur/
+ 1028  ls
+ 1029  crontab -e
+ 1030  ls
+ 1031  crontab -e
+ 1032  ls
+ 1033  crontab -e
+ 1034  ls
+ 1035  ls -l
+ 1036  ls -l -a
+ 1037  nano taskARTUR.sh
+ 1038  ls
+ 1039  crontab -i
+ 1040  crontab i
+ 1041  crontab l
+ 1042  crontab -e
+ 1044  ls
+ 1045  cd
+ 1046  cd /opt
+ 1047  cd 060323_e/
+ 1048  ls
+ 1049  cd Artur/
+ 1050  ls
+ 1051  cd ..
+ 1052  cd Rychard/
+ 1053  ls
+ 1054  cd ..
+ 1055  cd ihor/
+ 1056  ls
+ 1057  cd ..
+ 1058  Rychard/
+ 1059  ls
+ 1060  cd Rychard/
+ 1061  ls
+ 1062  nano taskRychard.sh
+ 1063  cd
+ 1064  cd /opt/060323_e/Artur/
+ 1065  ls
+ 1066  crontab -e
+ 1067  history > output.txt
+
