@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "f48586c3-25a7-40f4-b539-f52a5ec9a4ea",
+		"name": "swagger-traine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18140116",
+		"_collection_link": "https://martian-meteor-860655.postman.co/workspace/TellRan~2e7f737d-6d64-434d-92f2-572db1d94c5e/collection/18140116-f48586c3-25a7-40f4-b539-f52a5ec9a4ea?action=share&creator=18140116&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "add-new-pet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.environment.set(\"NAME\", \"ARTUR\");\r",
+									"//pm.variables.replaceIn(\"NAME\", '{{$randomFirstName}}')\r",
+									"//pm.environment.set(\"NAME\", '{{$randomFirstName}}');\r",
+									"\r",
+									"//let petId = pm.variables.replaceIn('{{$randomInt}}')\r",
+									"\r",
+									"\r",
+									"\r",
+									"let petId2 = pm.environment.replaceIn('{{$randomInt}}');\r",
+									"let departman = pm.environment.replaceIn('{{$randomDepartment}}');\r",
+									"let doggy_name = pm.environment.replaceIn('{{$randomDepartment}}');\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.sendRequest(\"https://petstore.swagger.io/v2/pet/\" + 527, function(err, response){\r",
+									"    let getPet = response.json();\r",
+									"    pm.test(\"Is pet exist\", function() {\r",
+									"        console.log(getPet)\r",
+									"        if(getPet.status) {\r",
+									"            return false\r",
+									"        } else {\r",
+									"            pm.expect(getPet.message).to.be.eql(\"Pet not found\")\r",
+									"        }\r",
+									"    })\r",
+									"})\r",
+									"\r",
+									"pm.environment.set(\"PET_ID\", parseInt(petId2));\r",
+									"pm.environment.set(\"DOGGY_NAME\", doggy_name);\r",
+									"pm.environment.set(\"CATEGORY_NAME\", departman);\r",
+									"\r",
+									"console.log(typeof(departman))"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Is a number\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(50);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Is pet available\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"available\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": {{PET_ID}},\r\n  \"category\": {\r\n    \"id\": {{CATEGORY_ID}},\r\n    \"name\": \"{{CATEGORY_NAME}}\"\r\n  },\r\n  \"name\": \"{{DOGGY_NAME}}\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
