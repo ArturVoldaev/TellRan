@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HomeWork5 {
   public static void main(String[] args) {
-    int[] array = {7, -6, 4, 1, 6, 8, -2, 0};
+    int[] array = {7, -6, 4, 1, 6, 8, -2, 0, -10};
     int low = 0;
     int high = array.length - 1;
     quickSort(array, low, high);
@@ -41,13 +41,13 @@ public class HomeWork5 {
         i++;
         j--;
       }
-      // вызов рекурсии для левой и правой части
-      if (low < j) {
-        quickSort(array, low, j);
-      }
-      if (high > i) {
-        quickSort(array, i, high);
-      }
+    }
+    // вызов рекурсии для левой и правой части
+    if (low < j) {
+      quickSort(array, low, j);
+    }
+    if (high > i) {
+      quickSort(array, i, high);
     }
   }
 }
