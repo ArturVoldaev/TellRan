@@ -32,16 +32,6 @@ ON t1.SELL_ID = t2.BOSS_ID;
 
 -- 4
 
-SELECT 
-*
-FROM customers;
-    SELECT 
-*
-FROM orders;
-    SELECT 
-*
-FROM sellers;
-
 SELECT
 t1.CNAME,
 t2.SNAME,
