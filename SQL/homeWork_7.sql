@@ -35,11 +35,6 @@ ON t2.SELL_ID = t3.SELL_ID;
 
 
 -- 3
-SELECT * 
-FROM customers;
-
-SELECT * 
-FROM orders;
 
 SELECT 
 t1.CNAME
